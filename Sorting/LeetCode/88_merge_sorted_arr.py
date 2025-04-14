@@ -7,12 +7,6 @@ class Solution:
         result =  []
 
         while i<m and j<n:
-            if nums1[i] == 0:
-                i+=1
-                continue
-            if nums2[j] == 0:
-                j+=1
-                continue
             if nums1[i] < nums2[j]:
                 result.append(nums1[i])
                 i+=1
