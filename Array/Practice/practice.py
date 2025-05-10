@@ -74,7 +74,35 @@
 # result = arr_conversion([1,2,3,4,5,6],3,2)
 # print(result)
 
-import numpy as np
-arr2d = np.array([[1,2],[3,4]])
-arr1d = arr2d.flatten()
-print(arr1d)
+# import numpy as np
+# arr2d = np.array([[1,2],[3,4]])
+# arr1d = arr2d.flatten()
+# print(arr1d)
+
+# from itertools import permutations
+
+# def permute(my_list):
+#     n = len(my_list)
+    
+#     permuted_arr = permutations(my_list, n)
+#     output_arr = [list(p) for p in permuted_arr] ## converts tuple into list
+#     print(output_arr)
+# permute([1,2,3])
+# permute([1])
+# permute([1,2])
+
+def majority_elem(nums):
+    nums_counter = {}
+    
+    for num in nums:
+        if num in nums_counter:
+            nums_counter[num] += 1
+        else:
+            nums_counter[num] = 1
+    
+    for key,val in nums_counter.items():
+        if val > len(nums) // 2:
+            return key
+
+result = majority_elem([1,2,2,2,3,3,3,3])
+print(result)
